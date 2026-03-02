@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuerdos... ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            /* FONDO LLAMATIVO ANIMADO */
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #e94057);
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .carta-container {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
+            width: 100%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 10px #e94057;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #eee;
+            text-align: center;
+        }
+
+        .btn-ver-fotos {
+            display: block;
+            width: 80%;
+            margin: 30px auto;
+            padding: 15px;
+            background: linear-gradient(90deg, #e94057, #f27121);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(233, 64, 87, 0.4);
+        }
+
+        .btn-ver-fotos:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(233, 64, 87, 0.7);
+        }
+
+        /* Sección de Fotos llamativa */
+        #seccionFotos {
+            display: none;
+            text-align: center;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 2px solid #fff;
+            transition: all 0.3s ease;
+        }
+
+        /* EFECTO NEÓN EN FOTOS */
+        .galeria img:hover {
+            transform: scale(1.05) rotate(2deg);
+            border-color: #00fff2;
+            box-shadow: 0 0 15px #00fff2, 0 0 30px #00fff2;
+        }
+
+        .hidden { display: none !important; }
+        .show { display: block !important; }
+    </style>
+</head>
+<body>
+
+    <div class="carta-container">
+        <div id="contenidoCarta">
+            <h1>Hola mi niña... ❤️</h1>
+            
+            <p>Queria decirte que me gusto mucho poder volver a pasar tiempo contigo, volver a ver tu sonrisa de cerca y a reirnos juntos la verdad si te extrañaba demasiadoo y no sabes lo contento que me pone estar contigo (Y mas cuando estas encima mio)🤭
+            
+            <p>Me siento muy bien contigo y creo que mi mirada hacia ti lo dice todo😅
+ Y muy pronto tendras una propuesta de mi parte que se que te va a gustar😉.</p>
+            
+            <button class="btn-ver-fotos" onclick="mostrarFotos()">Ver nuestros recuerdos ✨</button>
+        </div>
+
+        <div id="seccionFotos">
+            <h1>Nuestros Momentos ✨</h1>
+            <div class="galeria">
+                <img src="foto1.jpeg" alt="Recuerdo 1">
+                <img src="foto2.jpeg" alt="Recuerdo 2">
+                <img src="foto3.jpeg" alt="Recuerdo 3">
+                <img src="foto4.jpeg" alt="Recuerdo 4">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarFotos() {
+            document.getElementById('contenidoCarta').classList.add('hidden');
+            document.getElementById('seccionFotos').classList.add('show');
+        }
+    </script>
+</body>
+</html>
